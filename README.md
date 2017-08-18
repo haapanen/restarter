@@ -3,4 +3,6 @@ A small application that stops a Wolfenstein: Enemy Territory server after being
 
 Usage:
 
+```
 ./restarter -ip 123.123.123.123 -port 27965 -rconpassword foobar -interval 24h -pollrate 1m -numchecks 5
+```
