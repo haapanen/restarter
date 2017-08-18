@@ -11,12 +11,12 @@ import (
 )
 
 func main() {
-	interval := flag.Duration("interval", 24 * time.Hour, "Specify the interval the system tries to restart the target server.")
+	interval := flag.Duration("interval", 24 * time.Hour, "Specify the interval the service tries to restart the target server.")
 	pollRate := flag.Duration("pollrate", 30 * time.Second, "Specify how many seconds to wait between polls after the interval duration has passed.")
 	ipAddress := flag.String("ip", "", "Specify the target server IP address.")
 	port := flag.Int("port", 27960, "Specify the target server port.")
 	rconPassword := flag.String("rconpassword", "", "Specify the target server rcon password.")
-	numChecksBeforeRestart := flag.Int("numchecks", 5, "How many times should the system check that the server is empty before restarting it.")
+	numChecksBeforeRestart := flag.Int("numchecks", 5, "How many times should the service check that the server is empty before restarting it.")
 
 	flag.Parse()
 	fmt.Printf("Starting the server restarter with params:\n");
@@ -25,7 +25,7 @@ func main() {
 	fmt.Printf("IP address: %s:%d\n", *ipAddress, *port)
 	fmt.Printf("Rcon password: %s\n", *rconPassword)
 
-	fmt.Println("Testing connection and rcon password to the server")
+	fmt.Println("Testing connection and rcon password")
 	switch testConnection(ipAddress, port, rconPassword) {
 	case InvalidPassword:
 		fmt.Println("Invalid rcon password, exiting.")
