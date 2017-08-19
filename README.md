@@ -5,7 +5,7 @@ Build for your platform:
 
 ```
 https://github.com/golang/go/wiki/WindowsCrossCompiling
-go build -o restarter main.go
+go build -o bin/restarter src/main.go
 ```
 
 Usage:
